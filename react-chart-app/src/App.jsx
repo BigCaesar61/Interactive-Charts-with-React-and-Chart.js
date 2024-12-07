@@ -13,7 +13,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/data.json"); // Ensure this matches your public folder structure
+        const response = await fetch("/financial_data.json");
         const data = await response.json();
         setChartData(data);
       } catch (error) {
@@ -25,7 +25,7 @@ const App = () => {
   }, []);
 
   if (!chartData) {
-    return <div>Loading data, please wait...</div>; // Loading message
+    return <div>Loading data, please wait...</div>;
   }
 
   return (
